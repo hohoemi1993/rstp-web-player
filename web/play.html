@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>rtsp player</title>
+    <style type="text/css">
+        html, body {
+            background-color: #111;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<canvas id="video-canvas"></canvas>
+
+<script src="jsmpeg.min.js"></script>
+<script type="text/javascript">
+    var canvas = document.getElementById('video-canvas');
+    var url = 'ws://'+'localhost:14000/play';
+    var config = {
+        canvas: canvas,
+        autoplay: true,
+        audio: false,
+        video: true,
+        protocols: 'web_rtsp'
+    };
+    var player = new JSMpeg.Player(url, config);
+</script>
+</body>
+</html>
